@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import KpointPlayer from './components'
+import KpointPlayer from './lib/components/KpointPlayer'
 
 ReactDOM.render(
   <React.StrictMode>
