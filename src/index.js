@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import KpointPlayer from './components'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <KpointPlayer domain="ktpl.kpoint.com"
+    videoId="gcc-d9e8dbc3-5dfa-4f68-bf7a-97f25fb7632c"
+    height="360px"
+    width="640px"
+    offset="50000"
+    hide="search, toc, logo"
+    resume="false"  
+    />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
