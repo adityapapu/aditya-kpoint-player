@@ -1,6 +1,6 @@
 {
   "name": "aditya-kpoint-player",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "keywords": ["react", "components", "ui","kpoint","player"],
   "main": "dist/index.js",
