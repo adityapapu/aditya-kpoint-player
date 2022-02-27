@@ -1,15 +1,22 @@
 {
-  "name": "aditya-kpoint-player",
-  "version": "0.1.2",
+  "name": "kpoint-react-player",
+  "version": "0.0.1",
   "private": false,
-  "keywords": ["react", "components", "ui","kpoint","player"],
+  "keywords": [
+    "kpoint-react-player",
+    "kpoint",
+    "player"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "files": [ "dist", "README.md" ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adityapapu/aditya-kpoint-player"
-},
+    "url": "git+https://github.com/adityapapu/aditya-kpoint-player.git"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "react": "^17.0.2",
@@ -45,6 +52,11 @@
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11"
   },
-  "license": "UNLICENSED"
-  
+  "license": "UNLICENSED",
+  "description": "<h1 align='center'>   kPointPlayer </h1>",
+  "bugs": {
+    "url": "https://github.com/adityapapu/aditya-kpoint-player/issues"
+  },
+  "homepage": "https://github.com/adityapapu/aditya-kpoint-player#readme",
+  "author": "Kpoint Technology"
 }
