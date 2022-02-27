@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+<h1 align='center'>
+  kPointPlayer
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align='center'>
+  <a href='https://www.npmjs.com/package/react-player'>
+    <img src='https://img.shields.io/npm/v/react-player.svg' alt='Latest npm version'>
+  </a>
+  <a href='https://travis-ci.org/CookPete/react-player'>
+    <img src='https://img.shields.io/travis/CookPete/react-player/master.svg' alt='Build Status'>
+  </a>
+  <a href='https://codecov.io/gh/CookPete/react-player'>
+    <img src='https://img.shields.io/codecov/c/github/cookpete/react-player.svg' alt='Test Coverage'>
+  </a>
+  <a href='https://www.patreon.com/cookpete'>
+    <img src='https://img.shields.io/badge/sponsor-patreon-fa6854.svg' alt='Become a sponsor on Patreon'>
+  </a>
+</p>
 
-## Available Scripts
+<p align='center'>
+  A React component for embeding video in kpoint player. 
+</p>
 
-In the project directory, you can run:
+### Migrating to ReactPlayer `v2.0`
 
-### `npm start`
+ReactPlayer `v2.0` changes single player imports and adds lazy loading players. Support for `preload` has also been removed, plus some other changes. See [`MIGRATING.md`](/MIGRATING.md) for information.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install aditya-kpoint-player
+```
 
-### `npm test`
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import KpointPlayer from './lib/components/KpointPlayer'
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ReactDOM.render(
+  <React.StrictMode>
+    <KpointPlayer domain="ktpl.kpoint.com"
+    videoId="gcc-d9e8dbc3-5dfa-4f68-bf7a-97f25fb7632c"
+    height="360px"
+    width="640px"
+    offset="50000"
+    hide="search, toc, logo"
+    resume="false"  
+    />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-### `npm run build`
+```
+For platforms without direct use of `npm` modules, a minified version of `ReactPlayer` is located in `dist` after installing. To generate this file yourself, checkout the repo and run `npm run build`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Props
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Prop | Description | Default
+---- | ----------- | -------
+`domain` | Host name of your kPoint server. Typically of the form acme.kpoint.com. | `""`
+`vidoeId` | Id of the video to load. | `""`
+`width` | Set the width of the player | `640px`
+`height` | Set the height of the player | `360px`
+`style` | Add [inline styles](https://facebook.github.io/react/tips/inline-styles.html) to the root element | `{}`
+`offset` | Start offset in milliseconds to start the video from
+`hide` | You can choose to hide a certain player controls based on the use case. Here is a list of supported controls which can be hidden. | `{}`
+`xt` | Xauth token. Please see developer console for info on how to generate and use Xauth token.
+`resume` | Do not show options to resume video from last position | `false`
+`cookie_name` | Tracks the cookie with the provided name. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
